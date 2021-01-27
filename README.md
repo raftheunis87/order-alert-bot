@@ -22,3 +22,12 @@ For each order you will receive a notification in [Telegram](https://telegram.or
       - secret: the secret from FTX
       - subaccount: the name of the subaccount
 1. Run the bot `npm run build && npm run start:prod`
+
+## How can I help?
+All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/raftheunis87/order-alert-bot/issues/new). You can also buy me some [☕️ coffee](https://www.buymeacoffee.com/rt87) to help keep me productive! You can also sent me some crypto to the following addresses:
+
+- BTC: 3P4eit3YxdokJZNNEF9s6VosG9zAxhj4pS
+- ETH: 0xa3Fe3CDa5cD73022F1935b342dc57FD8C6C34F56
+- USDT (TRC20): THV4oP8LAt7cijNjzccfbFu8KxqdqWS8Ns
+
+Thanks again for your support, it is much appreciated! 🙏
