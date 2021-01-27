@@ -1,13 +1,7 @@
 <p align="center">
   <a href="#about">About</a>
   •
-  <a href="#features">Features</a>
-  •
   <a href="#installation">Installation</a>
-  •
-  <a href="#images">Images</a>
-  •
-  <a href="#how-can-i-help">Help</a>
 </p>
 
 ## About
