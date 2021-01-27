@@ -18,8 +18,8 @@ For each order you will receive a notification in [Telegram](https://telegram.or
     - `TELEGRAM_BOT_TOKEN` is the token you receive after creating a bot with the BotFather
     - `TELEGRAM_CHAT_ID` is the id of the telegram group or channel in which the bot will give the order alerts
     - `FTX_ACCOUNTS` is an array of objects in which you can add all your FTX subaccounts. Each object needs the following keys:
-      - key: the apiKey from FTX
-      - secret: the secret from FTX
+      - key: the apiKey from FTX (You can/should use a read-only api key)
+      - secret: the secret from FTX (You can/should use a read-only api key)
       - subaccount: the name of the subaccount
 1. Run the bot `npm run build && npm run start:prod`
 
