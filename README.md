@@ -15,7 +15,7 @@ The **Order Alert Bot** listens to [FTX]( https://ftx.com) orders via [websocket
 For each order you will receive a notification in [Telegram](https://telegram.org/).
 
 ## Installation
-> ⚠️ Best to run the bot on a VPS. I can recommend [VirMach](https://virmach.com/).
+> ⚠️ Best to run the bot on a VPS. I can recommend [Hetzner](https://www.hetzner.com/cloud).
 1. Install [NodeJS](https://nodejs.org/en/download/)
 1. Clone this repository `git clone https://github.com/raftheunis87/order-alert-bot.git`
 1. Install all requirements `npm install`
