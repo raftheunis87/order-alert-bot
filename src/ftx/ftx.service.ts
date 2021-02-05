@@ -35,30 +35,46 @@ export class FtxService {
   // HELPERS
 
   buildMessage(account, data) {
-    const accountName = account.subaccount
-      ? `Subaccount ${account.subaccount}`
-      : 'Main Account';
+    const accountName = `Account: ${
+      account.subaccount ? account.subaccount : 'Main Account'
+    }`;
 
     if (this.isClosedMarketOrder(data)) {
-      const { filledSize, avgFillPrice, reduceOnly } = data;
+      const { market, side, filledSize, avgFillPrice, reduceOnly } = data;
 
       // If reduce only equals true, we assume it's a stop market. Sadly no other way to differentiate afaik.
       if (reduceOnly === true) {
-        return `${accountName}\nFilled stop market order.\n${filledSize} @ ${avgFillPrice}`;
+        return `${accountName}\nMarket: ${market}\nSide: ${this.capitalizeFirstLetter(
+          side,
+        )}\nFilled stop market order\n${filledSize} @ ${avgFillPrice}`;
       } else {
-        return `${accountName}\nFilled market order.\n${filledSize} @ ${avgFillPrice}`;
+        return `${accountName}\nMarket: ${market}\nSide: ${this.capitalizeFirstLetter(
+          side,
+        )}\nFilled market order\n${filledSize} @ ${avgFillPrice}`;
       }
     }
 
     if (data.type === 'limit') {
-      const { remainingSize, filledSize, size, reduceOnly, price } = data;
+      const {
+        market,
+        side,
+        remainingSize,
+        filledSize,
+        size,
+        reduceOnly,
+        price,
+      } = data;
       const fillStateStr = remainingSize > 0 ? 'Partially filled' : 'Filled';
 
       // If reduce only equals true, we assume it's a stop limit. Sadly no other way to differentiate afaik.
       if (reduceOnly === true) {
-        return `${accountName}\n${fillStateStr} stop limit order.\n${filledSize} of ${size} @ ${price}`;
+        return `${accountName}\nMarket: ${market}\nSide: ${this.capitalizeFirstLetter(
+          side,
+        )}\n${fillStateStr} stop limit order\n${filledSize} of ${size} @ ${price}`;
       } else {
-        return `${accountName}\n${fillStateStr} limit order.\n${filledSize} of ${size} @ ${price}`;
+        return `${accountName}\nMarket: ${market}\nSide: ${this.capitalizeFirstLetter(
+          side,
+        )}\n${fillStateStr} limit order\n${filledSize} of ${size} @ ${price}`;
       }
     }
   }
@@ -69,5 +85,9 @@ export class FtxService {
 
   isClosedMarketOrder(order) {
     return order.type === 'market' && order.status === 'closed';
+  }
+
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 }
